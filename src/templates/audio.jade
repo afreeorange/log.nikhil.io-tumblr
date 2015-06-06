@@ -1,0 +1,21 @@
+|{block:Audio}
+div.brick.item.audio
+    |{block:AlbumArt}
+    img(src="{AlbumArtURL}")
+    |{/block:AlbumArt}
+
+    div
+        |{block:AudioEmbed}
+        |   {AudioEmbed color="white"}
+        |{/block:AudioEmbed}
+
+        |{block:AudioPlayer}
+        |   {AudioPlayerBlack}
+        |{/block:AudioPlayer}
+
+    |{block:Caption}
+    p {Caption}
+    |{/block:Caption}
+
+    include _permalink
+|{/block:Audio}

@@ -1,0 +1,11 @@
+|{block:IndexPage}
+
+nav(style="{block:SearchPage}display:none;{/block:SearchPage}{block:TagPage}display:none;{/block:TagPage}")
+    p Page {CurrentPage} of {TotalPages}
+    ul
+        li
+            |{block:PreviousPage} #[a(href="{PreviousPage}", id="previous") {block:PreviousPage} Previous]
+        li
+            |{block:NextPage} #[a(href="{NextPage}", id="next") {block:NextPage} Next]
+
+|{/block:IndexPage}

@@ -1,0 +1,14 @@
+|{block:Photo}
+
+div.brick.item.photo
+    |{LinkOpenTag}
+    img(src="{PhotoURL-HighRes}", alt="{PhotoAlt}", width="{PhotoWidth-HighRes}", height="{PhotoHeight-HighRes}")
+    |{LinkCloseTag}
+
+    |{block:Caption}
+    |{Caption}
+    |{/block:Caption}
+
+    include _permalink
+
+|{/block:Photo}
