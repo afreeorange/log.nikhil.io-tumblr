@@ -5,6 +5,7 @@ $(window).load ->
     wall_of_posts = $container.masonry
                         itemSelector: '.brick'
                         transitionDuration: 0
+                        gutter: 1
 
 $ ->
     $container.infinitescroll

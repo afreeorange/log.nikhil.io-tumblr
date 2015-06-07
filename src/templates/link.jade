@@ -1,13 +1,15 @@
 |{block:Link}
 
-div.brick.item.link
-    h2
-        a(href="{URL}", target="{Target}") {Name}
+.brick.item
+    .link
+        h2
+            a(href="{URL}", target="{Target}") {Name}
 
-    |{block:Description}
-    p {Description}
-    |{/block:Description}
+        |{block:Description}
+        |{Description}
+        |{/block:Description}
 
-    include _permalink
+        p
+            a(href="{Permalink}") &#9679;
 
 |{/block:Link}

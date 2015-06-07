@@ -12,6 +12,7 @@ References
 To Do
 -----
 
+* Add linters
 * Chat
 * Panorama
 * Photoset
@@ -25,3 +26,8 @@ To Do
 * "Edit" links when logged in
 * Development and prod pipelines
 * Selectively choose bower dependencies (i.e., don't include all transitive deps)
+
+Notes
+-----
+
+* Emmet LiveStyle rocks

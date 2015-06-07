@@ -1,23 +1,105 @@
+// Meyer reset
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+// Some fonts I like
 @import url(http://fonts.googleapis.com/css?family=Cardo:400,400italic,700|Lusitana:400,700);
 
+@item-face: cardo, georgia, "times new roman", serif;
+@helvetica: "helvetica neue", helvetica, arial, geneva, sans-serif;
+@item-width: 350px;
+@item-padding: 10px;
+
 html, body {
-    margin:0;
-    padding: 0;
-    background: white;
-    font-family: Cardo;
+    background: url("src/images/back.png") top left repeat;
+    // background: url("data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAV8AAABXCAYAAACjkUZYAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAFTSURBVHic7dRBEQMwDMCwdJjKH0E4dSh2fkxC4JfPe28A+J1zzszM7O67957dfZ+4CeAvmS9AwHwBAuYLEDBfgID5AgTMFyBgvgAB8wUImC9AwHwBAuYLEDBfgID5AgTMFyBgvgAB8wUImC9AwHwBAuYLEDBfgID5AgTMFyBgvgAB8wUImC9AwHwBAuYLEDBfgID5AgTMFyBgvgAB8wUImC9AwHwBAuYLEDBfgID5AgTMFyBgvgAB8wUImC9AwHwBAuYLEDBfgID5AgTMFyBgvgAB8wUImC9AwHwBAuYLEDBfgID5AgTMFyBgvgAB8wUImC9AwHwBAuYLEDBfgID5AgTMFyBgvgAB8wUImC9AwHwBAuYLEDBfgID5AgTMFyBgvgAB8wUImC9AwHwBAuYLEDBfgID5AgTMFyBgvgAB8wUImC9AwHwBAuYLEDBfgID5AgS+T+ULEYMr5oYAAAAASUVORK5CYII=");
+    color: #333;
+}
+a {
+    text-decoration: none;
 }
 
-#loading {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 50px;
-    background: green;
-    opacity: 0.5;
+// Masthead
+#masthead {
+    width: @item-width;
+    border-bottom: 1px solid #CCC;
+    h1 {
+        margin: 0;
+        padding: 0;
+        // background: #FF3300;
+        text-align: center;
+        font-family: Lusitana;
+        letter-spacing: -1px;
+        a {
+            font-size: 5.25em;
+            color: #FF0000;
+            line-height: @item-width * 0.7;
+        }
+    }
+    p {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 0.75em;
+        font-family: @item-face;
+        line-height: @item-width * 0.07;
+        color: #333;
+    }
+    ul {
+        overflow: hidden;
+        text-align: center;
+        font-size: 0.9em;
+        font-family: @item-face;
+        line-height: @item-width * 0.07;
+        padding: 0 0 0 120px;
+        text-transform: lowercase;
+        li {
+            float: left;
+            margin: 0 15px 0 0;
+            a {
+                color: #999;
+            }
+            a:hover {
+                color: red;
+            }
+        }
+    }
+    form {
+        text-align: center;
+        height: @item-width * 0.07;
+        font-size: 0.9em;
+        border-top: 1px dashed #CCC;
+        padding: 10px 0 5px 0;
+        input {
+            text-transform: lowercase;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+        }
+        button {
+            text-transform: lowercase;
+            background: red;
+            color: white;
+            border: 0;
+            border-radius: 15px;
+        }
+    }
 }
 
+// Items
+.wideitem,
+.item {
+    width: @item-width;
+    font-family: @item-face;
+    border-bottom: 1px solid #CCC;
+}
+.wideitem {
+    width: @item-width * 2;
+}
+
+// Miscellaneous
 .hide,
-footer,
-nav {
+footer {
     display: none;
 }
+
+@import (less) "quote.less";
+@import (less) "link.less";
+@import (less) "photo.less";

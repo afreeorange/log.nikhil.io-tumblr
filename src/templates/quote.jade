@@ -1,12 +1,14 @@
 |{block:Quote}
 
-div.brick.item.quote
-    blockquote {Quote}
+.brick.item
+    .quote
+        blockquote {Quote}
 
-    |{block:Source}
-    p &mdash; {Source}
-    |{/block:Source}
+        |{block:Source}
+        p &mdash; {Source}
+        |{/block:Source}
 
-    include _permalink
+        p
+            a(href="{Permalink}") &#9679;
 
 |{/block:Quote}

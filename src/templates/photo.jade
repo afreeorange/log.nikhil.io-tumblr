@@ -1,14 +1,17 @@
 |{block:Photo}
 
-div.brick.item.photo
-    |{LinkOpenTag}
-    img(src="{PhotoURL-HighRes}", alt="{PhotoAlt}", width="{PhotoWidth-HighRes}", height="{PhotoHeight-HighRes}")
-    |{LinkCloseTag}
+.brick.item
+    .photo
+        |{LinkOpenTag}
+        img(src="{PhotoURL-HighRes}", alt="{PhotoAlt}")
+        |{LinkCloseTag}
 
-    |{block:Caption}
-    |{Caption}
-    |{/block:Caption}
+        |{block:Caption}
+        |{Caption}
+        |{/block:Caption}
 
-    include _permalink
+        p
+            a(href="{Permalink}").
+                {Month} {DayOfMonth} {Year}
 
 |{/block:Photo}
