@@ -4,8 +4,10 @@
 var gulp = require('gulp'),
     jade = require('gulp-jade'),
     less = require('gulp-less'),
+    cssmin = require('gulp-cssmin'),
     // less = require('gulp-less-sourcemap'),
     coffee = require('gulp-coffee'),
+    uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     concatenate = require('gulp-concat'),
     header = require('gulp-header'),
@@ -66,6 +68,7 @@ gulp.task('styles', function(){
     return gulp.src(files.styles)
                .pipe(less())
                .pipe(base64())
+               // .pipe(cssmin())
                .pipe(rename('log.nikhil.io.css'))
                .pipe(gulp.dest(destination));
 });
@@ -74,6 +77,7 @@ gulp.task('styles', function(){
 gulp.task('scripts', function() {
     return gulp.src(files.scripts)
                .pipe(coffee())
+               .pipe(uglify())
                .pipe(concatenate('log.nikhil.io.js'))
                .pipe(gulp.dest(destination));
 });

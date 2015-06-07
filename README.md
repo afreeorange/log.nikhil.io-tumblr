@@ -13,6 +13,7 @@ To Do
 -----
 
 * Add linters
+* Source maps
 * Chat
 * Panorama
 * Photoset
